@@ -85,20 +85,18 @@ fun ProfileScreen(
                 }
             }
         }
+
+        // Caixa d'objectius
+        Text("Objectius")
+        Card(){
+            Text(objectiu)
+        }
+
+        // Caixa de nivell d'activitat
+        Text("Nivell d'activitat")
+        Card() {
+            Text(nivellActivitat)
+        }
     }
-
-
-    // Caixa d'objectius
-    Text("Objectius")
-    Card(){
-        Text(objectiu)
-    }
-
-    // Caixa de nivell d'activitat
-    Text("Nivell d'activitat")
-    Card() {
-        Text(nivellActivitat)
-    }
-
 }
 
