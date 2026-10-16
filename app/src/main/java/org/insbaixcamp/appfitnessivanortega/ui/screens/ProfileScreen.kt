@@ -2,6 +2,7 @@ package org.insbaixcamp.appfitnessivanortega.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import org.insbaixcamp.appfitnessivanortega.R
 import androidx.compose.foundation.layout.Box
@@ -161,6 +162,19 @@ fun ProfileScreen(
         Card(Modifier.fillMaxWidth().padding(16.dp), shape = RoundedCornerShape(16.dp)) {
             Text(nivellActivitat, Modifier.padding(8.dp))
         }
+
+
+    }
+    Column(){
+        Image(
+            painter = painterResource(id = R.drawable.pencil_edit_button),
+            contentDescription = "Edit",
+            alignment = Alignment.TopEnd,
+            modifier = Modifier
+                .size(32.dp)
+                .clickable{ editar () }
+        )
+
     }
 }
 
