@@ -44,16 +44,33 @@ fun ProfileScreen(
             Image(
                 painter = painterResource(id = R.drawable.ic_launcher_foreground),
                 contentDescription = null,
-                Modifier.size(120.dp).clip(CircleShape).background(Color.Black)
+                Modifier
+                    .size(120.dp)
+                    .clip(CircleShape)
+                    .background(Color.Black)
             )
             Text(text = nom, fontWeight = FontWeight.Bold, fontSize = 20.sp)
             Text(text = email, fontSize = 16.sp, color = Color.Gray)
         }
 
         // Caixa de informació
-        Card(Modifier.fillMaxWidth().padding(16.dp), shape = RoundedCornerShape(16.dp)) {
-            Row(Modifier.fillMaxWidth().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+        Card(Modifier
+            .fillMaxWidth()
+            .padding(16.dp), shape = RoundedCornerShape(16.dp)) {
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
                 Column() {
+                    Image(
+                        painter = painterResource(id = android.R.drawable.ic_menu_my_calendar),
+                        contentDescription = null,
+                        Modifier
+                            .size(22.dp)
+                            .clip(CircleShape)
+                    )
                     Text(text = "Edat", color = Color.Gray)
                     // Calcular edat a partir de la data de naixement (format "dd/mm/aaaa")
                     val calendar = Calendar.getInstance()
@@ -72,6 +89,24 @@ fun ProfileScreen(
                     Text(text = edat.toString(), fontWeight = FontWeight.Bold)
                 }
                 Column() {
+                    if(genere=="Home"){
+                        Image(
+                            painter = painterResource(id = R.drawable.gender_male),
+                            contentDescription = null,
+                            Modifier
+                                .size(22.dp)
+                                .clip(CircleShape)
+                        )
+                    }else if(genere=="Dona"){
+                        Image(
+                            painter = painterResource(id = R.drawable.gender_female),
+                            contentDescription = null,
+                            Modifier
+                                .size(22.dp)
+                                .clip(CircleShape)
+                        )
+                    }
+
                     Text(text = "Genere", color = Color.Gray)
                     Text(text = genere, fontWeight = FontWeight.Bold)
                 }
@@ -86,16 +121,17 @@ fun ProfileScreen(
             }
         }
 
+
         // Caixa d'objectius
-        Text("Objectius")
-        Card(){
-            Text(objectiu)
+        Text("Objectius", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+        Card(Modifier.fillMaxWidth().padding(16.dp), shape = RoundedCornerShape(16.dp)) {
+            Text(objectiu, Modifier.padding(8.dp))
         }
 
         // Caixa de nivell d'activitat
-        Text("Nivell d'activitat")
-        Card() {
-            Text(nivellActivitat)
+        Text("Nivell d'activitat", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+        Card(Modifier.fillMaxWidth().padding(16.dp), shape = RoundedCornerShape(16.dp)) {
+            Text(nivellActivitat, Modifier.padding(8.dp))
         }
     }
 }
