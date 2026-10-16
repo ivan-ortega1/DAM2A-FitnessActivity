@@ -107,14 +107,28 @@ fun ProfileScreen(
                         )
                     }
 
-                    Text(text = "Genere", color = Color.Gray)
+                    Text(text = "Gènere", color = Color.Gray)
                     Text(text = genere, fontWeight = FontWeight.Bold)
                 }
                 Column() {
+                    Image(
+                        painter = painterResource(id = R.drawable.inclined_ruler_svgrepo_com),
+                        contentDescription = null,
+                        Modifier
+                            .size(22.dp)
+                            .clip(CircleShape)
+                    )
                     Text(text = "Alçada", color = Color.Gray)
                     Text(text = "$alcada cm", fontWeight = FontWeight.Bold)
                 }
                 Column() {
+                    Image(
+                        painter = painterResource(id = R.drawable.scale),
+                        contentDescription = null,
+                        Modifier
+                            .size(22.dp)
+                            .clip(CircleShape)
+                    )
                     Text(text = "Pes", color = Color.Gray)
                     Text(text = "$pes kg", fontWeight = FontWeight.Bold)
                 }
@@ -123,12 +137,26 @@ fun ProfileScreen(
 
 
         // Caixa d'objectius
+        Image(
+            painter = painterResource(id = R.drawable.gym_weight),
+            contentDescription = null,
+            Modifier
+                .size(22.dp)
+                .clip(CircleShape)
+        )
         Text("Objectius", fontWeight = FontWeight.Bold, fontSize = 20.sp)
         Card(Modifier.fillMaxWidth().padding(16.dp), shape = RoundedCornerShape(16.dp)) {
             Text(objectiu, Modifier.padding(8.dp))
         }
 
         // Caixa de nivell d'activitat
+        Image(
+            painter = painterResource(id = R.drawable.running_stick_figure),
+            contentDescription = null,
+            Modifier
+                .size(22.dp)
+                .clip(CircleShape)
+        )
         Text("Nivell d'activitat", fontWeight = FontWeight.Bold, fontSize = 20.sp)
         Card(Modifier.fillMaxWidth().padding(16.dp), shape = RoundedCornerShape(16.dp)) {
             Text(nivellActivitat, Modifier.padding(8.dp))

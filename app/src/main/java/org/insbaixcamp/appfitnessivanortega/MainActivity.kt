@@ -39,7 +39,7 @@ fun FitnessApp() {
     var nom: String by remember { mutableStateOf("Iván Ortega") }
     var email: String by remember { mutableStateOf("ivan.ortega1@insbaixcamp.cat") }
     var dataNaixement: String by remember { mutableStateOf("16/10/1999") }
-    var genere: String by remember { mutableStateOf("Dona") }
+    var genere: String by remember { mutableStateOf("Home") }
     var alcada: Int by remember { mutableStateOf(170) }
     var pes: Double by remember { mutableStateOf(60.0) }
     var objectiu:String by remember { mutableStateOf("Guanyar massa muscular") }
@@ -47,7 +47,7 @@ fun FitnessApp() {
     var editant: Boolean by remember { mutableStateOf(false) }
 
     if (editant) {
-        EditProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, { editant = false })
+        EditProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, {editant = false })
     } else {
         ProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, { editant = true })
 
