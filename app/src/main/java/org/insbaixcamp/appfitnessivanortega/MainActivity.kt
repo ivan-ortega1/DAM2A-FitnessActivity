@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -44,12 +45,15 @@ fun FitnessApp() {
     var pes: Double by remember { mutableStateOf(60.0) }
     var objectiu:String by remember { mutableStateOf("Guanyar massa muscular") }
     var nivellActivitat:String by remember { mutableStateOf("Moderat") }
-    var editant: Boolean by remember { mutableStateOf(false) }
+    var editant: Boolean by remember { mutableStateOf(true) }
+    var fotoPerfil: Int by remember {
+        mutableIntStateOf(R.drawable.ic_launcher_background)
+    }
 
     if (editant) {
-        EditProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, {editant = false })
+        EditProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, {editant = false }, { fotoPerfil = R.drawable.ic_launcher_foreground }, { fotoPerfil = R.drawable.ic_launcher_background })
     } else {
-        ProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, { editant = true })
+        ProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, fotoPerfil, { editant = true })
 
         /**
          * fun editar(){editant=true}

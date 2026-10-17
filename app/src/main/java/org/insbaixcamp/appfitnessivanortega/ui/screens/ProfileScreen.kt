@@ -37,13 +37,14 @@ fun ProfileScreen(
     pes: Double,
     objectiu: String,
     nivellActivitat: String,
+    fotoPerfil: Int,
     editar: () -> Unit
 ) {
     Column() {
         // Caixa de foto, nom i email
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = fotoPerfil),
                 contentDescription = null,
                 Modifier
                     .size(120.dp)
