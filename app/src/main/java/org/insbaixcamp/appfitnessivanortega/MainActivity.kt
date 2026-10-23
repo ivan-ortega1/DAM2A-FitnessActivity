@@ -43,6 +43,7 @@ fun FitnessApp() {
     var genere: String by remember { mutableStateOf("Home") }
     var alcada: Int by remember { mutableStateOf(170) }
     var pes: Double by remember { mutableStateOf(60.0) }
+    var pesObjectiu: Double by remember { mutableStateOf(60.0) }
     var objectiu:String by remember { mutableStateOf("Guanyar massa muscular") }
     var nivellActivitat:String by remember { mutableStateOf("Moderat") }
     var editant: Boolean by remember { mutableStateOf(true) }
@@ -51,7 +52,17 @@ fun FitnessApp() {
     }
 
     if (editant) {
-        EditProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, {editant = false }, { fotoPerfil = R.drawable.ic_launcher_foreground }, { fotoPerfil = R.drawable.ic_launcher_background })
+        EditProfileScreen(nom, email, dataNaixement, genere, alcada, pes, pesObjectiu, objectiu, nivellActivitat, { nomN, emailN, dataNaixementN, genereN, alcadaN, pesN, pesObjectiuN, objectiuN, nivellActivitatN ->
+            nom = nomN
+            email = emailN
+            dataNaixement = dataNaixementN
+            genere = genereN
+            alcada = alcadaN
+            pes = pesN
+            pesObjectiu = pesObjectiuN
+            objectiu = objectiuN
+            nivellActivitat = nivellActivitatN
+            editant = false }, { fotoPerfil = R.drawable.ic_launcher_foreground }, { fotoPerfil = R.drawable.ic_launcher_background })
     } else {
         ProfileScreen(nom, email, dataNaixement, genere, alcada, pes, objectiu, nivellActivitat, fotoPerfil, { editant = true })
 

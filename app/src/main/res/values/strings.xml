@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AppFitnessIvanOrtega</string>
+    <string-array name="opcions_genere">
+        <item>Home</item>
+        <item>Dona</item>
+        <item>No em identifico</item>
+        <item>Prefereixo no dir-ho</item>
+    </string-array>
 </resources>
