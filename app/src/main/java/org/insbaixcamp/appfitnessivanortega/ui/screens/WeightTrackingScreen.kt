@@ -40,6 +40,8 @@ fun WeightTrackingScreen(
     val weightTrackingList = remember { mutableStateListOf<WeightTracking>() }
     var pesNouText by remember { mutableStateOf("") }
 
+    var pesActual by remember { mutableStateOf(pesActual) }
+
     LazyColumn(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -100,6 +102,8 @@ fun WeightTrackingScreen(
                     if (pesNou != null) {
                         val data = System.currentTimeMillis()
                         weightTrackingList.add(WeightTracking(data, pesNou))
+                        // actualizar peso
+                        pesActual = pesNou
                         Log.i(tag, "Object weightTracking: $weightTrackingList")
                         pesNouText = ""
                     }
