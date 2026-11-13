@@ -46,7 +46,7 @@ fun FitnessApp() {
     var pesObjectiu: Double by remember { mutableStateOf(60.0) }
     var objectiu:String by remember { mutableStateOf("Guanyar massa muscular") }
     var nivellActivitat:String by remember { mutableStateOf("Moderat") }
-    var editant: Boolean by remember { mutableStateOf(true) }
+    var editant: Boolean by remember { mutableStateOf(false) }
     var fotoPerfil: Int by remember {
         mutableIntStateOf(R.drawable.ic_launcher_background)
     }
